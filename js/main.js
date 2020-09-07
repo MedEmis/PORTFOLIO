@@ -1,0 +1,39 @@
+//animations///////////////////////
+new WOW().init()
+//slider/////////////////////////////////////
+var mySwiper = new Swiper('.swiper-container', {
+	pagination: {
+		el: '.project-pagination',
+		bulletClass: 'project-bullet',
+		bulletActiveClass: 'projects-bullet-active',
+		clickable: true
+
+	},
+})
+
+//slow_scroll///////////////////////////////////////
+const anchors = document.querySelectorAll('a[href*="#"]')
+
+for (let anchor of anchors) {
+	anchor.addEventListener('click', function (e) {
+		e.preventDefault()
+
+		const blockID = anchor.getAttribute('href').substr(1)
+
+		document.getElementById(blockID).scrollIntoView({
+			behavior: 'smooth',
+			block: 'start'
+		})
+	})
+}
+//down
+//up
+var t;
+function up() {
+	var top = Math.max(document.body.scrollTop,document.documentElement.scrollTop);
+	if(top > 0) {
+		window.scrollBy(0,-100);
+		t = setTimeout('up()',20);
+	} else clearTimeout(t);
+	return false;
+}$(document).ready((function(){$(window).outerWidth(),$(window).outerHeight();var e=window.navigator.userAgent,t=(e.indexOf("MSIE "),{Android:function(){return navigator.userAgent.match(/Android/i)},BlackBerry:function(){return navigator.userAgent.match(/BlackBerry/i)},iOS:function(){return navigator.userAgent.match(/iPhone|iPad|iPod/i)},Opera:function(){return navigator.userAgent.match(/Opera Mini/i)},Windows:function(){return navigator.userAgent.match(/IEMobile/i)},any:function(){return t.Android()||t.BlackBerry()||t.iOS()||t.Opera()||t.Windows()}});function o(){return(e=navigator.userAgent).indexOf("MSIE ")>-1||e.indexOf("Trident/")>-1}function i(){var e=$(window).outerWidth();$(window).outerHeight();!function(e,t){var o=$(".header-menu"),i=$(".header-top-lang");e<750?i.hasClass("done")||i.addClass("done").appendTo(o):i.hasClass("done")&&i.removeClass("done").prependTo($(".header-top")),e<750?($(".header-bottom-menu--left").hasClass("done")||$(".header-bottom-menu--left").addClass("done").appendTo(o),$(".header-bottom-menu--right").hasClass("done")||$(".header-bottom-menu--right").addClass("done").appendTo(o)):($.each($(".header-bottom-menu--left"),(function(e,t){$(this).hasClass("header-bottom-menu--left"),$(this).hasClass("done")&&$(this).removeClass("done").prependTo($(".header-bottom__column").eq(0))})),$.each($(".header-bottom-menu--right"),(function(e,t){$(this).hasClass("header-bottom-menu--right"),$(this).hasClass("done")&&$(this).removeClass("done").prependTo($(".header-bottom__column").eq(2))})))}(e)}if(o()&&$("body").addClass("ie"),t.any()&&$("body").addClass("touch"),$(window).resize((function(e){i()})),i(),(t={Android:function(){return navigator.userAgent.match(/Android/i)},BlackBerry:function(){return navigator.userAgent.match(/BlackBerry/i)},iOS:function(){return navigator.userAgent.match(/iPhone|iPad|iPod/i)},Opera:function(){return navigator.userAgent.match(/Opera Mini/i)},Windows:function(){return navigator.userAgent.match(/IEMobile/i)},any:function(){return t.Android()||t.BlackBerry()||t.iOS()||t.Opera()||t.Windows()}}).any(),location.hash){var n=location.hash.replace("#","");$(".popup-"+n).length>0?l(n):$("div."+n).length>0&&$("body,html").animate({scrollTop:$("div."+n).offset().top},500,(function(){}))}$(".wrapper").addClass("loaded");var s,a,r;if(t.iOS());function l(e,o){$(".popup").removeClass("active").hide(),$(".menu__body").hasClass("active"),t.any()?setTimeout((function(){$("body").addClass("lock")}),300):($("body").css({paddingRight:$(window).outerWidth()-$(".wrapper").outerWidth()}).addClass("lock"),$(".pdb").css({paddingRight:$(window).outerWidth()-$(".wrapper").outerWidth()})),history.pushState("","","#"+e),""!=o&&null!=o&&$(".popup-"+e+" .popup-video__value").html('<iframe src="https://www.youtube.com/embed/'+o+'?autoplay=1"  allow="autoplay; encrypted-media" allowfullscreen></iframe>'),$(".popup-"+e).fadeIn(300).delay(300).addClass("active"),$(".popup-"+e).find(".slick-slider").length>0&&$(".popup-"+e).find(".slick-slider").slick("setPosition")}function d(){$(".popup").removeClass("active").fadeOut(300),$(".menu__body").hasClass("active")||(t.any()?$("body").removeClass("lock"):(setTimeout((function(){$("body").css({paddingRight:0}),$(".pdb").css({paddingRight:0})}),200),setTimeout((function(){$("body").removeClass("lock")}),200))),$(".popup-video__value").html(""),history.pushState("","",window.location.href.split("#")[0])}$(".header-menu__icon").click((function(e){$(this).toggleClass("active"),$(".header-menu").toggleClass("active"),$(this).hasClass("active")&&$("body").data("scroll",$(window).scrollTop()),$("body").toggleClass("lock"),$(this).hasClass("active")||$("body,html").scrollTop(parseInt($("body").data("scroll")))})),$(".gallery").length>0&&baguetteBox.run(".gallery",{}),$(".pl").click((function(e){return l($(this).attr("href").replace("#",""),$(this).data("vid")),!1})),$(".popup-close,.popup__close").click((function(e){return d(),!1})),$(".popup").click((function(e){if(!$(e.target).is(".popup>.popup-table>.cell *")||$(e.target).is(".popup-close")||$(e.target).is(".popup__close"))return d(),!1})),$(document).on("keydown",(function(e){27==e.which&&d()})),$(".goto").click((function(){var e=$(this).attr("href").replace("#","");return $("body,html").animate({scrollTop:$("."+e).offset().top+0},500,(function(){})),$(".menu__body").hasClass("active")&&($(".menu__body,.icon-menu").removeClass("active"),$("body").removeClass("lock")),!1})),function(){if(o()){let t=document.querySelectorAll(".ibg");for(var e=0;e<t.length;e++)t[e].querySelector("img")&&null!=t[e].querySelector("img").getAttribute("src")&&(t[e].style.backgroundImage="url("+t[e].querySelector("img").getAttribute("src")+")")}}(),$(document).on("click touchstart",(function(e){$(e.target).is(".select *")||$(".select").removeClass("active")})),$(window).scroll((function(){$(window).width();$(window).scrollTop()>50?$("#up").fadeIn(300):$("#up").fadeOut(300)})),$("#up").click((function(e){$("body,html").animate({scrollTop:0},300)})),$("body").on("click",".tab__navitem",(function(e){var t=$(this).index();if($(this).hasClass("parent"))t=$(this).parent().index();$(this).hasClass("active")||($(this).closest(".tabs").find(".tab__navitem").removeClass("active"),$(this).addClass("active"),$(this).closest(".tabs").find(".tab__item").removeClass("active").eq(t).addClass("active"),$(this).closest(".tabs").find(".slick-slider").length>0&&$(this).closest(".tabs").find(".slick-slider").slick("setPosition"))})),$.each($(".spoller.active"),(function(e,t){$(this).next().show()})),$("body").on("click",".spoller",(function(e){return $(this).hasClass("mob")&&!t.any()||($(this).parents(".one").length>0&&($(this).parents(".one").find(".spoller").not($(this)).removeClass("active").next().slideUp(300),$(this).parents(".one").find(".spoller").not($(this)).parent().removeClass("active")),$(this).hasClass("closeall")&&!$(this).hasClass("active")&&$.each($(this).closest(".spollers").find(".spoller"),(function(e,t){$(this).removeClass("active"),$(this).next().slideUp(300)})),$(this).toggleClass("active").next().slideToggle(300,(function(e,t){$(this).parent().find(".slick-slider").length>0&&$(this).parent().find(".slick-slider").slick("setPosition")}))),!1})),-1!=navigator.appVersion.indexOf("Mac")||$(".scroll-body").length>0&&$(".scroll-body").niceScroll(".scroll-list",(s=100,a=50,r=!1,t.any()&&(s=10,a=1,r=!0),{cursorcolor:"#fff",cursorwidth:"4px",background:"",autohidemode:!0,cursoropacitymax:.4,bouncescroll:r,cursorborderradius:"0px",scrollspeed:s,mousescrollstep:a,directionlockdeadzone:0,cursorborder:"0px solid #fff"})),$(".t,.tip").length>0&&$(".t,.tip").webuiPopover({placement:"top",trigger:"hover",backdrop:!1,animation:"fade",dismissible:!0,padding:!1,onShow:function(e){},onHide:function(e){}}).on("show.webui.popover hide.webui.popover",(function(e){$(this).toggleClass("active")}))}));
