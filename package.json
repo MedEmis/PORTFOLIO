@@ -11,11 +11,13 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
+    "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "bootstrap-vue": "^2.21.2",
     "core-js": "^3.6.5",
     "npm-reinstall": "^3.1.0",
     "vue": "^2.6.12",
+    "vue-pdf": "^4.2.0",
     "vue-scrollto": "^2.20.0",
     "vue-typed-js": "^0.1.2"
   },
