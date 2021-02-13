@@ -78,7 +78,7 @@ export default {
         },
         {
           name: "Wedding",
-          image: "firstSite.jpg",
+          image: "fourthSite.png",
           link: "https://medemis.github.io/wedding/",
           stack: ["html", "css", "scss", "js"],
           description:
@@ -94,7 +94,7 @@ export default {
         },
         {
           name: "Social Network",
-          image: "LOGO.png",
+          image: "socialNetwork.png",
           stack: ["html", "css", "scss", "js", "react", "redux"],
           link:
             "https://social-network-on-react.vercel.app/react-social-network/",
@@ -103,7 +103,7 @@ export default {
         },
         {
           name: "LinkedIn",
-          image: "LOGO.png",
+          image: "linkedIn.png",
           stack: ["html", "css", "scss", "js", "vue", "vuex", "bootstrap"],
           link: "https://vue-apps-collection.vercel.app/website/profile",
           description:
@@ -138,7 +138,7 @@ export default {
   transition: 0.5s linear;
 }
 main {
-  background: rgba(110, 103, 212, 0.473);
+  background: rgba(17, 16, 34, 0.836);
   margin: 10px 0;
   border-radius: 10px;
   overflow: hidden;
@@ -164,7 +164,7 @@ main {
     width: 290px;
     min-height: 250px;
     height: auto;
-    background: rgba(161, 157, 157, 0.404);
+    background: rgba(104, 104, 104, 0.404);
     margin: 20px;
     border-radius: 15px;
     border-top: 10px solid rgb(10, 7, 211);
@@ -176,6 +176,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    color: #fff;
 
     &_order {
       position: absolute;

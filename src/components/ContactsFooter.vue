@@ -56,7 +56,7 @@
             variant="primary"
           />
         </div>
-        <a href="#" class="return-up">
+        <a href="#" v-scroll-to="'#scrollTarget'" class="return-up">
           <b-icon icon="arrow-up" scale="2.5" variant="primary"
         /></a>
       </b-col>
@@ -108,11 +108,12 @@ export default {
 
 <style lang="scss">
 footer {
-  background: rgba(190, 144, 144, 0.329);
+  background: rgba(31, 31, 31, 0.87);
   margin: 10px 0;
   border-radius: 10px;
 }
 .conacts-form {
+  color: #fff;
 }
 .contacts {
   padding: 1vh 4vw;

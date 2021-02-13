@@ -1,14 +1,33 @@
 <template>
-  <header>
-    <b-row class="hero-header px-2">
+  <header id="scrollTarget">
+    <b-row class="hero-header px-3">
       <b-col class="hero-header__info" xl="8" lg="8" md="12" sm="12" xs="12">
-        <div class="hero-header__info_position">Junior Frontend Developer</div>
+        <div
+          class="hero-header__info_position"
+          data-aos="slide-right"
+          data-aos-easing="linear"
+          data-aos-duration="1000"
+        >
+          Junior Frontend Developer
+        </div>
         <hr />
-        <div class="hero-header__info_name">Maksym Drahanov</div>
+        <div
+          class="hero-header__info_name"
+          data-aos="slide-right"
+          data-aos-easing="linear"
+          data-aos-duration="1200"
+        >
+          Maksym Drahanov
+        </div>
         <hr />
         <div class="hero-header__info_stack">
-          <h3 class="hero-header__info_stack__title">
-            Used tchnologies stack:
+          <h3
+            class="hero-header__info_stack__title"
+            data-aos="slide-right"
+            data-aos-easing="linear"
+            data-aos-duration="1300"
+          >
+            Used technologies stack:
           </h3>
           <div>
             <transition-group
@@ -49,22 +68,12 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col class="hero-header__about m-4">
+      <b-col class="hero-header__about m-4 px-4">
         <h2>About me</h2>
         <article>
-          <p>I'm a self-taught front-end developer.</p>
-          <p>
-            I want to start my carrer in Software Development as Junion
-            Front-end-Developer.<br />
-            I would like to get real experience in a real company with real
-            projects.
-          </p>
-          <p>
-            During my studying and practising I've got experience with HTML,
-            CSS, JS, React, Redux, Vue, Vuex. <br />
-            Also I have some experience with Wordpress as Headless CMS, which
-            was been used as database.
-          </p>
+          <vue-typed-js :strings="text" :typeSpeed="30" :showCursor="false">
+            <p class="typing"></p>
+          </vue-typed-js>
         </article>
       </b-col>
     </b-row>
@@ -115,6 +124,9 @@ export default {
         },
       ],
       stackToShow: [],
+      text: [
+        "I'm a self-taught front-end developer. <br/> <hr/> I want to start my carrer in Software Development as Junion Front-end-Developer.  <br/> <hr/> I would like to get a real experience in a real company with real projects. <br/> <hr/> During my studying and practising I've got experience with HTML, CSS, JS, React, Redux, Vue, Vuex. <br/> <hr/> Also I have some experience with Wordpress as Headless CMS, which was been used as database.",
+      ],
     };
   },
   methods: {
@@ -138,10 +150,12 @@ export default {
 
 <style lang="scss">
 header {
-  background: rgba(102, 134, 241, 0.466);
+  background: rgba(15, 16, 22, 0.829);
   position: relative;
   margin: 10px 0;
   border-radius: 10px;
+  min-height: 98vh;
+  transition: 0.5s linear;
 }
 .hero-header {
   display: flex;
@@ -157,6 +171,7 @@ header {
     justify-content: center;
     align-items: flex-start;
     text-align: left;
+    overflow: hidden;
     hr {
       width: 100%;
       height: 5px;
@@ -173,14 +188,16 @@ header {
     }
 
     &_name {
-      color: rgb(4, 28, 94);
+      color: rgb(6, 52, 179);
       margin-bottom: 10px;
     }
 
     &_stack {
       text-align-last: left;
       width: 100%;
+      height: auto;
       &__title {
+        color: #fff;
       }
       &__list {
         height: auto;
@@ -189,7 +206,7 @@ header {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        background: rgba(150, 143, 143, 0.295);
+        background: rgba(61, 58, 58, 0.295);
         padding: 10px;
         border-radius: 20px;
         li {
@@ -231,13 +248,18 @@ header {
     }
   }
   &__about {
-    background: rgba(102, 98, 98, 0.199);
+    background: rgba(66, 63, 63, 0.199);
+    color: #fff;
     font-size: 20px;
     border-radius: 20px;
+    padding: 20px;
     article {
       padding: 10px;
       text-align: left;
       font-weight: 700;
+      p {
+        line-height: 30px;
+      }
     }
   }
 }

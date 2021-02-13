@@ -30,6 +30,7 @@ export default {
   @media screen and (max-width: 570px) {
     padding: 0;
     margin: 0;
+    margin-left: 10px;
   }
 }
 </style>
