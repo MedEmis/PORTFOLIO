@@ -106,7 +106,7 @@ export default {
 
 <style lang="scss">
 footer {
-  background: rgba(177, 117, 117, 0.329);
+  background: rgba(190, 144, 144, 0.329);
   margin: 10px 0;
   border-radius: 10px;
 }
@@ -156,7 +156,7 @@ footer {
     height: 50px;
     width: 50px;
     text-align: center;
-    border-radius: 50%;
+    border-radius: 50% 0 10px 0;
     line-height: 50px;
     transform: translate(20%, 50%);
   }

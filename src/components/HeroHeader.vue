@@ -113,7 +113,7 @@ export default {
 
 <style lang="scss">
 header {
-  background: rgb(102, 134, 241);
+  background: rgba(102, 134, 241, 0.466);
   position: relative;
   margin: 10px 0;
   border-radius: 10px;
@@ -205,8 +205,9 @@ header {
     }
   }
   &__about {
-    background: rgba(102, 98, 98, 0.137);
+    background: rgba(102, 98, 98, 0.199);
     font-size: 20px;
+    border-radius: 20px;
     article {
       padding: 10px;
       text-align: left;

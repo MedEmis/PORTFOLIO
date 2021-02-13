@@ -10,7 +10,7 @@
         <b-row>
           <b-col class="my-works__wrapper">
             <div
-              class="my-works__item"
+              class="my-works__item animate__animated wow animate__bounceIn"
               v-for="(item, index) in works"
               :key="item.name"
               :href="item.link"
@@ -114,12 +114,16 @@ export default {
 
 <style lang="scss">
 main {
-  background: rgb(111, 103, 212);
+  background: rgba(110, 103, 212, 0.473);
   margin: 10px 0;
   border-radius: 10px;
+  overflow: hidden;
 }
 .my-works {
   &__title {
+    text-align: center;
+    background: rgb(2, 52, 160);
+    color: #fff;
   }
 
   &__wrapper {
@@ -137,7 +141,6 @@ main {
     margin: 20px;
     border-radius: 15px;
     border-top: 10px solid rgb(10, 7, 211);
-    // border-bottom: 40px solid rgb(10, 7, 211);
     position: relative;
     z-index: 5;
     text-align: center;
