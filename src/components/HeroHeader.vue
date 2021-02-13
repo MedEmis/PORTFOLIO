@@ -11,8 +11,16 @@
             Used tchnologies stack:
           </h3>
           <div>
-            <ul class="hero-header__info_stack__list">
-              <li v-for="item in stack" :key="item.name">
+            <transition-group
+              name="animate"
+              class="hero-header__info_stack__list"
+              tag="ul"
+            >
+              <li
+                v-for="item in stackToShow"
+                :key="item.name"
+                data-aos="slide-left"
+              >
                 <b-img
                   fluid
                   :src="require(`@/assets/${item.image}`)"
@@ -20,7 +28,7 @@
                 />
                 <span>{{ item.name }}</span>
               </li>
-            </ul>
+            </transition-group>
           </div>
         </div>
       </b-col>
@@ -106,7 +114,24 @@ export default {
           image: "bootstrap.png",
         },
       ],
+      stackToShow: [],
     };
+  },
+  methods: {
+    displayStack() {
+      for (var x = 0, ln = this.stack.length; x < ln; x++) {
+        setTimeout(
+          (i) => {
+            this.stackToShow.push(this.stack[i]);
+          },
+          x * 250,
+          x
+        );
+      }
+    },
+  },
+  mounted() {
+    this.displayStack();
   },
 };
 </script>
@@ -157,8 +182,9 @@ header {
       width: 100%;
       &__title {
       }
-
       &__list {
+        height: auto;
+        transition: 0.5s linear;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;

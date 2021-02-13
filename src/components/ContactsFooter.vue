@@ -3,7 +3,7 @@
     <b-row class="p-4">
       <b-col class="px-4" xl="6" lg="6" md="12" sm="12" xs="12">
         <form
-          action="https://formspree.io/draganovmaksim9@gmail.com"
+          action="https://formspree.io/f/mrgovbpl"
           method="post"
           id="scrolltarget"
           class="conacts-form"
@@ -21,6 +21,7 @@
                 id="input-1"
                 type="email"
                 placeholder="Enter email"
+                name="email"
                 required
               ></b-form-input>
             </b-form-group>
@@ -34,6 +35,7 @@
                 id="input-2"
                 placeholder="...message"
                 required
+                name="message"
               ></b-form-textarea>
             </b-form-group>
 

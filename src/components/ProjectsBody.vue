@@ -8,34 +8,37 @@
           </b-col>
         </b-row>
         <b-row>
-          <b-col class="my-works__wrapper">
-            <div
-              class="my-works__item animate__animated wow animate__bounceIn"
-              v-for="(item, index) in works"
-              :key="item.name"
-              :href="item.link"
-            >
-              <span class="my-works__item_order">{{ index + 1 }}</span>
-              <h4 class="my-works__item_name">{{ item.name }}</h4>
-              <a :href="item.link" target="blank"
-                ><b-img
-                  fluid
-                  :alt="item.name"
-                  :href="item.link"
-                  :src="require(`@/assets/projects/${item.image}`)"
-                />
-              </a>
-              <p>{{ item.description }}</p>
-              <ul class="my-works__item_stack">
-                <li
-                  class="my-works__item_stack__item"
-                  v-for="icon in item.stack"
-                  :key="icon"
-                >
-                  <b-img :src="require(`@/assets/${icon}.png`)" alt="icon" />
-                </li>
-              </ul>
-            </div>
+          <b-col>
+            <transition-group name="animate" class="my-works__wrapper" tag="ul">
+              <li
+                class="my-works__item"
+                v-for="(item, index) in toShow"
+                :key="item.name"
+                :href="item.link"
+                data-aos="zoom-in-down"
+              >
+                <span class="my-works__item_order">{{ index + 1 }}</span>
+                <h4 class="my-works__item_name">{{ item.name }}</h4>
+                <a :href="item.link" target="blank"
+                  ><b-img
+                    fluid
+                    :alt="item.name"
+                    :href="item.link"
+                    :src="require(`@/assets/projects/${item.image}`)"
+                  />
+                </a>
+                <p>{{ item.description }}</p>
+                <ul class="my-works__item_stack">
+                  <li
+                    class="my-works__item_stack__item"
+                    v-for="icon in item.stack"
+                    :key="icon"
+                  >
+                    <b-img :src="require(`@/assets/${icon}.png`)" alt="icon" />
+                  </li>
+                </ul>
+              </li>
+            </transition-group>
           </b-col>
         </b-row>
       </b-col>
@@ -107,17 +110,39 @@ export default {
             "My first web-app with headless WordPress. Used languages - HTML, SCSS, Java Script.  Frameworks - Vue, Vuex, VueBootstrap",
         },
       ],
+      toShow: [],
     };
+  },
+  methods: {
+    displayWorks() {
+      for (var x = 0, ln = this.works.length; x < ln; x++) {
+        setTimeout(
+          (i) => {
+            this.toShow.push(this.works[i]);
+            console.log("ssss");
+          },
+          x * 200,
+          x
+        );
+      }
+    },
+  },
+  mounted() {
+    this.displayWorks();
   },
 };
 </script>
 
 <style lang="scss">
+.animate__bounceI {
+  transition: 0.5s linear;
+}
 main {
   background: rgba(110, 103, 212, 0.473);
   margin: 10px 0;
   border-radius: 10px;
   overflow: hidden;
+  transition: 0.5s linear;
 }
 .my-works {
   &__title {
@@ -131,6 +156,8 @@ main {
     justify-content: center;
     align-items: stretch;
     flex-wrap: wrap;
+    --animate-duration: 3s;
+    transition: 0.5s linear;
   }
 
   &__item {
@@ -149,6 +176,7 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+
     &_order {
       position: absolute;
       top: -7px;
@@ -194,6 +222,12 @@ main {
         }
       }
     }
+  }
+  .before-enter {
+    opacity: 0.5;
+  }
+  .enter {
+    opacity: 0.9;
   }
 }
 </style>
