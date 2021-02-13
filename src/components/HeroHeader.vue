@@ -69,20 +69,7 @@
     </b-row>
     <b-row>
       <b-col class="hero-header__about m-4 px-4">
-        <div class="d-flex justify-content-between">
-          <h2>About me</h2>
-          <b-button class="hero-header__about_download px-2">
-            <b-icon icon="download" />
-            <a
-              download="JUNIOR_FRONT-END_CV_Drahanov_Maksym"
-              target="blank"
-              href="https://drive.google.com/file/d/1RS8pWb5m9O8vEMkHvTFLeD3ndbRZlgqp/view?usp=sharing"
-            >
-              Download CV</a
-            >
-          </b-button>
-        </div>
-
+        <h2>About me</h2>
         <article>
           <vue-typed-js :strings="text" :typeSpeed="30" :showCursor="false">
             <p class="typing"></p>
@@ -94,8 +81,6 @@
 </template>
 
 <script>
-import axios from "axios";
-axios.defaults.withCredentials = true;
 export default {
   name: "HeroHeader",
   data() {
