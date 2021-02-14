@@ -76,7 +76,7 @@
             <a
               download="JUNIOR_FRONT-END_CV_Drahanov_Maksym"
               target="blank"
-              href="https://drive.google.com/file/d/1RS8pWb5m9O8vEMkHvTFLeD3ndbRZlgqp/view?usp=sharing"
+              href="https://drive.google.com/file/d/1dwW9iu8a8i7jvowT_3cp8ABHwxkvjaiv/view?usp=sharing"
             >
               Download CV</a
             >
