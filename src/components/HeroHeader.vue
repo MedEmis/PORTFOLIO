@@ -83,7 +83,7 @@
           </b-button>
         </div>
         <article>
-          <vue-typed-js :strings="text" :typeSpeed="30" :showCursor="false">
+          <vue-typed-js :strings="text" :typeSpeed="10" :showCursor="false">
             <p class="typing"></p>
           </vue-typed-js>
         </article>
