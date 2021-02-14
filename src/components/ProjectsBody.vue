@@ -54,7 +54,7 @@ export default {
       works: [
         {
           name: "Catering",
-          image: "firstSite.jpg",
+          image: "firstSite.png",
           link: "https://medemis.github.io/FirstSite/index",
           stack: ["html", "css", "scss", "js"],
           description:
