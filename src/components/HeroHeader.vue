@@ -76,7 +76,7 @@
             <a
               download="JUNIOR_FRONT-END_CV_Drahanov_Maksym"
               target="blank"
-              href="https://docs.google.com/document/d/1oNw2b0H9hjfM4_XreKSjCOSnRP9RhtHFcNS2CB9wN64/edit?usp=sharing"
+              href="./JUNIOR_FRONT-END_CV_Drahanov_Maksym.pdf"
             >
               Download CV</a
             >
@@ -93,6 +93,8 @@
 </template>
 
 <script>
+// href="https://docs.google.com/document/d/1oNw2b0H9hjfM4_XreKSjCOSnRP9RhtHFcNS2CB9wN64/edit?usp=sharing"
+
 export default {
   name: "HeroHeader",
   data() {
